@@ -53,22 +53,12 @@ export default function Skills() {
     const mouse = Mouse.create(render.canvas);
     const mouseConstraint = MouseConstraint.create(engine, {
       mouse,
-      constraint: {
-        stiffness: 0.2,
-        render: {
-          visible: false,
-        },
-      },
     });
 
-    mouseConstraint.mouse.element.removeEventListener(
-      "mousewheel",
-      mouseConstraint.mouse.mousewheel
-    );
-    mouseConstraint.mouse.element.removeEventListener(
-      "DOMMouseScroll",
-      mouseConstraint.mouse.mousewheel
-    );
+    mouseConstraint.constraint.stiffness = 0.2;
+    mouseConstraint.constraint.render.visible = false;
+
+    Mouse.clearSourceEvents(mouse);
 
     const boxJavascript = Bodies.rectangle(
       width / 2,
@@ -141,22 +131,22 @@ export default function Skills() {
       left,
       right,
       mouseConstraint,
-      Bodies.circle(100, 100, width * 0.05, width * 0.05),
-      Bodies.circle(100, 100, width * 0.05, width * 0.05),
-      Bodies.circle(100, 100, width * 0.05, width * 0.05),
-      Bodies.circle(100, 100, width * 0.05, width * 0.05),
-      Bodies.circle(100, 100, width * 0.05, width * 0.05),
-      Bodies.circle(100, 100, width * 0.05, width * 0.05),
-      Bodies.circle(100, 100, width * 0.05, width * 0.05),
-      Bodies.circle(100, 100, width * 0.05, width * 0.05),
-      Bodies.circle(100, 100, width * 0.05, width * 0.05),
-      Bodies.circle(100, 100, width * 0.05, width * 0.05),
-      Bodies.circle(100, 100, width * 0.05, width * 0.05),
-      Bodies.circle(100, 100, width * 0.05, width * 0.05),
-      Bodies.circle(100, 100, width * 0.05, width * 0.05),
-      Bodies.circle(100, 100, width * 0.05, width * 0.05),
-      Bodies.circle(100, 100, width * 0.05, width * 0.05),
-      Bodies.circle(100, 100, width * 0.05, width * 0.05),
+      Bodies.circle(100, 100, width * 0.05),
+      Bodies.circle(100, 100, width * 0.05),
+      Bodies.circle(100, 100, width * 0.05),
+      Bodies.circle(100, 100, width * 0.05),
+      Bodies.circle(100, 100, width * 0.05),
+      Bodies.circle(100, 100, width * 0.05),
+      Bodies.circle(100, 100, width * 0.05),
+      Bodies.circle(100, 100, width * 0.05),
+      Bodies.circle(100, 100, width * 0.05),
+      Bodies.circle(100, 100, width * 0.05),
+      Bodies.circle(100, 100, width * 0.05),
+      Bodies.circle(100, 100, width * 0.05),
+      Bodies.circle(100, 100, width * 0.05),
+      Bodies.circle(100, 100, width * 0.05),
+      Bodies.circle(100, 100, width * 0.05),
+      Bodies.circle(100, 100, width * 0.05),
     ]);
 
     const runner = Runner.create();
@@ -169,8 +159,6 @@ export default function Skills() {
       Composite.clear(useEngine.current.world, true);
       Engine.clear(useEngine.current);
       render.canvas.remove();
-      render.canvas = null;
-      render.context = null;
       render.textures = {};
       window.removeEventListener("resize", resize);
     };
