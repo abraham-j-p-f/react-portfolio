@@ -19,7 +19,7 @@ export default function Navbar() {
           className={`h-screen w-40 bg-t_white flex justify-center items-end relative transition-all duration-300 ease-in-out`}
         >
           <div className="w-full h-11/12 p-4">
-            <NavbarLinks/>
+            <NavbarLinks closeMenu={handleTogle}/>
             <NavbarSocialLinks/>
           </div>
         </div>

@@ -45,10 +45,12 @@ const Item = ({
   name,
   url,
   icon,
+  closeMenu,
 }: {
   name: string;
   url: string;
   icon: IconDefinition;
+  closeMenu: any
 }) => {
   return (
     <div className="flex overflow-hidden items-center text-t_blue justify-center relative py-2">
@@ -56,6 +58,7 @@ const Item = ({
         className="font-litia text-right uppercase text-lg hover:text-t_blue-light transition-all relative"
         to={url}
         title={name}
+        onClick={closeMenu}
       >
         <div>
           <div className="flex justify-center text-t_white-dark">
@@ -74,11 +77,11 @@ const Item = ({
   );
 };
 
-export default function NavbarLinks() {
+export default function NavbarLinks({closeMenu}: any) {
   return (
     <div className="w-full h-11/12 overflow-y-auto flex flex-col justify-center divide-y-2 divide-t_white-dark">
       {navLinks.map(({ name, url, icon }) => (
-        <Item name={name} url={url} icon={icon} />
+        <Item name={name} url={url} icon={icon} closeMenu={closeMenu}/>
       ))}
     </div>
   );
