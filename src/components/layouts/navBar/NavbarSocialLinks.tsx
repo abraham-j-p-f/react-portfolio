@@ -4,6 +4,7 @@ import {
   faGithub,
   faLinkedin,
   faTwitter,
+  faBehance,
 } from "@fortawesome/free-brands-svg-icons";
 
 const socialLinks = [
@@ -21,6 +22,11 @@ const socialLinks = [
     name: "Twitter",
     icon: faTwitter,
     url: "https://twitter.com/_AJPF_",
+  },
+  {
+    name: "Behance",
+    icon: faBehance,
+    url: "https://www.behance.net/AbrahamJPF",
   },
 ];
 
@@ -48,7 +54,7 @@ const SocialLink = ({
 
 export default function NavbarSocialLinks() {
   return (
-    <div className="w-full h-1/12 flex items-center justify-between text-2xl text-t_blue">
+    <div className="w-full h-1/12 flex items-center justify-center space-x-2 text-2xl text-t_blue flex-wrap">
       {socialLinks.map(({ name, url, icon }) => (
         <SocialLink icon={icon} url={url} title={name} />
       ))}
