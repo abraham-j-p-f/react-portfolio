@@ -11,7 +11,7 @@ export default function Navbar() {
     <>
       <NavbarButtom handleTogle={handleTogle} toggle={toggle} />
       <div
-        className={`fixed z-10 -left-40 transition-all duration-500 ease-in ${
+        className={`fixed z-40 -left-40 transition-all duration-500 ease-in ${
           toggle ? "translate-x-full" : ""
         }`}
       >

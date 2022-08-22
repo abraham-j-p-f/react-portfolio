@@ -2,7 +2,7 @@ export default function NavbarButtom({handleTogle, toggle}: any) {
   return (
     <div
       onClick={handleTogle}
-      className="cursor-pointer fixed z-30 top-10 left-10 flex justify-center items-center"
+      className="cursor-pointer fixed z-50 top-10 left-10 flex justify-center items-center"
     >
       <div className="w-10 aspect-square bg-t_blue rounded-full absolute z-20 flex flex-col justify-center items-center text-white">
         <div className="w-5/12 aspect-square relative">
