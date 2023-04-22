@@ -1,15 +1,21 @@
 import trivia from "../assets/trivia.png";
+import netready from "../assets/netready.png";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 const works = [
   {
-    name: 'trivia',
-    url: 'https://trivia-crt.netlify.app/',
-    img: trivia
-  }
-]
+    name: "trivia",
+    url: "https://trivia-crt.netlify.app/",
+    img: trivia,
+  },
+  {
+    name: "netready",
+    url: "https://netready.vercel.app/",
+    img: netready,
+  },
+];
 
 export const ProjectCard = ({ path, url, img }: any) => {
   return (
@@ -21,7 +27,9 @@ export const ProjectCard = ({ path, url, img }: any) => {
           </div>
           <div className="w-full absolute bottom-0 p-4 flex items-center justify-between">
             <div className="bg-neutral-900 py-2 px-4 rounded-lg">
-              <h1 className="text-t_white font-litia text-2xl uppercase">{path}</h1>
+              <h1 className="text-t_white font-litia text-2xl uppercase">
+                {path}
+              </h1>
             </div>
             {/* <a target={"_blank"} href="https://trivia-crt.netlify.app/">
               <FontAwesomeIcon
@@ -39,7 +47,9 @@ export const ProjectCard = ({ path, url, img }: any) => {
 export const Projects = () => {
   return (
     <div className="py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      { works.map(({ name, url, img }) => ( <ProjectCard path={name} url={url} img={img}/> )) }
+      {works.map(({ name, url, img }) => (
+        <ProjectCard path={name} url={url} img={img} />
+      ))}
     </div>
   );
 };
