@@ -1,5 +1,6 @@
 import trivia from "../assets/trivia.png";
 import netready from "../assets/netready.png";
+import kick from "../assets/kick.png";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
@@ -14,6 +15,11 @@ const works = [
     name: "netready",
     url: "https://netready.vercel.app/",
     img: netready,
+  },
+  {
+    name: "Kick",
+    url: "https://kick-omega.vercel.app/",
+    img: kick,
   },
 ];
 

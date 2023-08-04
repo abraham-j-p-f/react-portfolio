@@ -10,6 +10,7 @@ import Work from "./work";
 import { Projects } from "./work/components/List";
 import Trivia from "./work/components/Trivia";
 import Netready from "./work/components/Netready";
+import Kick from "./work/components/Kick";
 
 export default function Router() {
   return (
@@ -21,6 +22,7 @@ export default function Router() {
             <Route index element={<Projects />} />
             <Route path="trivia" element={<Trivia />} />
             <Route path="netready" element={<Netready />} />
+            <Route path="kick" element={<Kick />} />
             <Route path="*" />
           </Route>
           <Route path="about" element={<About />} />
